@@ -1,0 +1,24 @@
+<?php
+/** @var \AHT\UploadLogo\Block\Favicon $block */
+?>
+
+<img src="<?php echo $block->getUrlImage() ?>" id="upload-favicon" alt="Image Logo">
+<script type="text/javascript">  
+(function  () {    
+    require(["jquery"], function($) {
+       $(function(){
+		$("#upload_logo_logo_custom_favicon_upload").change(function(event) {
+			var x = URL.createObjectURL(event.target.files[0]);
+			$("#upload-favicon").attr("src",x);
+			console.log(event);
+		});
+	})
+    });
+})();
+</script>
+<style>
+    img {
+        width:300px;
+        height: auto;
+    }
+</style>

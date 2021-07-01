@@ -1,0 +1,24 @@
+<?php
+/** @var \AHT\UploadLogo\Block\Image $block */
+?>
+
+<img src="<?php echo $block->getUrlImage() ?>" id="upload-img" alt="Image Logo">
+<script type="text/javascript">  
+(function  () {    
+    require(["jquery"], function($) {
+       $(function(){
+		$("#upload_logo_logo_custom_logo_upload").change(function(event) {
+			var x = URL.createObjectURL(event.target.files[0]);
+			$("#upload-img").attr("src",x);
+			console.log(event);
+		});
+	})
+    });
+})();
+</script>
+<style>
+    img {
+        width:300px;
+        height: auto;
+    }
+</style>

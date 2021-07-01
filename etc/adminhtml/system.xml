@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="aht" translate="label" sortOrder="500">
+            <label>AHT</label>
+        </tab>
+        <section id="upload_logo" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Upload Logo</label>
+            <tab>aht</tab>
+            <resource>AHT_UploadLogo::config</resource>
+            <group id="logo" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="custom_logo_upload" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File" sortOrder="1" showInDefault="1" showInWebsite="1" >
+                    <label>Upload Logo</label>
+                    <backend_model>AHT\UploadLogo\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media" scope_info="1">yourfolder</base_url>
+                </field>
+                <field id="image_logo"  sortOrder="2" showInDefault="1" showInWebsite="1" >
+                    <label>Logo </label>
+                    <frontend_model>AHT\UploadLogo\Block\Image</frontend_model>
+                </field>
+
+                <field id="custom_favicon_upload" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File" sortOrder="3" showInDefault="1" showInWebsite="1" >
+                    <label>Upload Favicon</label>
+                    <backend_model>AHT\UploadLogo\Model\Config\Backend\Favicon</backend_model>
+                    <base_url type="media" scope_info="1">favicon</base_url>
+                </field>
+                <field id="image_favicon"  sortOrder="4" showInDefault="1" showInWebsite="1" >
+                    <label>Favicon</label>
+                    <frontend_model>AHT\UploadLogo\Block\Favicon</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
